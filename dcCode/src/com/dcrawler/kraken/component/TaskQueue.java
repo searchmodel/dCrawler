@@ -10,6 +10,8 @@ import java.util.concurrent.PriorityBlockingQueue;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.dcrawler.kraken.component.entry.DefaultTask;
+
 public class TaskQueue {
 	
 	private static Log LOG = LogFactory.getLog(TaskQueue.class);

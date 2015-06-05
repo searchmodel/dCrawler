@@ -1,4 +1,4 @@
-package com.dcrawler.kraken.component;
+package com.dcrawler.kraken.component.entry;
 
 /**
  * 任务，每抓取一个网站就是一个任务
@@ -6,9 +6,9 @@ package com.dcrawler.kraken.component;
  * @author ias
  * 
  */
-public class DefaultTask {
+public class DefaultTask extends AbstractTask {
+
 	protected String keyword;
-	protected String uri;
 	protected String tag;
 	protected int priority;// 优先级
 	protected int maxPage;// 最大页
@@ -17,20 +17,14 @@ public class DefaultTask {
 	protected int order;// 排序
 	protected long lastRunTime = 0L;// 最后运行时间
 
+	protected TemplateTask templateTask;
+
 	public String getKeyword() {
 		return keyword;
 	}
 
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
-	}
-
-	public String getUri() {
-		return uri;
-	}
-
-	public void setUri(String uri) {
-		this.uri = uri;
 	}
 
 	public String getTag() {
@@ -79,6 +73,14 @@ public class DefaultTask {
 
 	public void setLastRunTime(long lastRunTime) {
 		this.lastRunTime = lastRunTime;
+	}
+
+	public TemplateTask getTemplateTask() {
+		return templateTask;
+	}
+
+	public void setTemplateTask(TemplateTask templateTask) {
+		this.templateTask = templateTask;
 	}
 
 }
