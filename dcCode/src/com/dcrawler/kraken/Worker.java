@@ -6,6 +6,7 @@ import org.apache.commons.logging.LogFactory;
 import com.dcrawler.kraken.component.IProcessor;
 import com.dcrawler.kraken.component.TaskQueue;
 import com.dcrawler.kraken.component.entry.DefaultTask;
+import com.dcrawler.util.Config;
 
 /**
  * 多线程处理任务
@@ -35,18 +36,25 @@ public class Worker implements Runnable {
 				if(taskQueue!=null){
 					try {
 						task = taskQueue.poll();
-						// 反射得到 IProcess，通过task.getCrawlerId()
-						if(processor!=null){
-							/**
-							 * TODO　Should add validateRobots
-							 */
-							boolean validateRobots = task.isValidateRobots();
-							if(!validateRobots){
-								// 执行自己实现的代码
-								processor.process(task);
+						
+						if(task!=null){
+
+							// 反射得到 IProcess，通过task.getCrawlerId()
+							String clsName = Config.getInstance().getValue(task.getCrawlerId());
+							Class<?> dc = Class.forName(clsName);
+							processor = (IProcessor) dc.newInstance();
+							
+							if(processor!=null){
+								/**
+								 * TODO　Should add validateRobots
+								 */
+								boolean validateRobots = task.isValidateRobots();
+								if(!validateRobots){
+									// 执行自己实现的代码
+									processor.process(task);
+								}
 							}
 						}
-						
 						
 					} catch (InterruptedException e) {
 						e.printStackTrace();

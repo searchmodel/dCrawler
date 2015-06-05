@@ -11,7 +11,12 @@ import net.sf.json.JSONObject;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-
+/**
+ * TemplateTask 完成
+ * 
+ * @author Bin Xu
+ *
+ */
 public class TemplateTask extends AbstractTask {
 
 	private static Log LOG = LogFactory.getLog(TemplateTask.class);

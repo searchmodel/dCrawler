@@ -59,7 +59,7 @@ public class TaskQueue {
 					}
 					priorityQueue.add(task);
 					uris.add(task.getUri());
-				}			
+				}	
 			}
 		}
 	}

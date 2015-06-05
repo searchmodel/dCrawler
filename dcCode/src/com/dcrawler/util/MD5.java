@@ -1,7 +1,11 @@
 package com.dcrawler.util;
 
 import java.security.MessageDigest;
-
+/**
+ * MD5算法设计
+ * @author Bin Xu
+ *
+ */
 public class MD5 {
 	public static String getMD5(byte[] source){
 		String s = null;
@@ -34,7 +38,6 @@ public class MD5 {
 				str[k++] = hexDigits[byte0 >>> 4 & 0xf];
 				// 取字节中低4位的数字转换
 				str[k++]= hexDigits[byte0 & 0xf];
-				
 			}
 			// 将转换后的结果转换为字符串
 			s = new String(str);
