@@ -1,0 +1,22 @@
+{
+	"items": [{
+		"crawlerId": "jd",
+		"keywords": "852761",
+		"tags": "产品",
+		"priorities": "9",
+		"brands": "百事",
+		"uri": "http://item.jd.com/{x}.html",
+		"escape": "false",
+		"encoding": "UTF-8",
+		"runMode": "",
+		"dateRange": "2014-03-15-00-00:2014-03-16-23-59",
+		"siteName": "京东商城",
+		"contentType": "产品",
+		"scheduler": {
+			"value": "",
+			"type": "OneTime"
+		},
+		"range": "1..50",
+		"validateRobots": "false"
+	}]
+}

@@ -29,7 +29,6 @@ public class Config {
 	}
 	
 	public String getValue(String key){
-		System.out.println(p.size());
 		return (String) p.get(key);
 	}
 	public static void main(String[] args) {
