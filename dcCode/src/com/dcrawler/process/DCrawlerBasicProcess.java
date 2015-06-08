@@ -7,7 +7,7 @@ public class DCrawlerBasicProcess implements IProcessor {
 
 	public void process(DefaultTask task) throws Exception {
 		// TODO Auto-generated method stub
-
+		System.out.println(Thread.currentThread().getName());
 	}
 
 }
